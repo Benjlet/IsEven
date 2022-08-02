@@ -1,6 +1,6 @@
 ﻿using IsEven.Abstractions.Response;
 
-namespace IsEven.Implementation.Service
+namespace IsEven.Implementation.Algorithms.Response
 {
     internal class IsEvenAlgorithmResponseNotEven : IIsEvenAlgorithmResponse
     {

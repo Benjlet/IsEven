@@ -1,16 +1,15 @@
-﻿using IsEven.Abstractions;
-using IsEven.Abstractions.Response;
-using IsEven.Implementation.Service;
+﻿using IsEven.Base;
+using IsEven.Implementation.Algorithms.Calculators;
+using IsEven.Implementation.Algorithms.Response;
 
 namespace IsEven.Implementation.Algorithms
 {
-    internal class IsEvenAlgorithmModulus : IIsEvenAlgorithm
+    internal class IsEvenAlgorithmModulus : IsEvenAlgorithm
     {
-        public IIsEvenAlgorithmResponse Calculate(int number)
+        public IsEvenAlgorithmModulus() : base(
+            new IsEvenAlgorithmResponseHandler(),
+            new IsEvenAlgorithmModulusCalculator())
         {
-            return number % 2 == 0
-                ? new IsEvenAlgorithmResponseEven()
-                : new IsEvenAlgorithmResponseNotEven();
         }
     }
 }

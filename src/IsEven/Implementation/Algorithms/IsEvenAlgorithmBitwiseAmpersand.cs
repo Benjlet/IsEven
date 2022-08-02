@@ -1,16 +1,15 @@
-﻿using IsEven.Abstractions;
-using IsEven.Abstractions.Response;
-using IsEven.Implementation.Service;
+﻿using IsEven.Base;
+using IsEven.Implementation.Algorithms.Calculators;
+using IsEven.Implementation.Algorithms.Response;
 
 namespace IsEven.Implementation.Algorithms
 {
-    internal class IsEvenAlgorithmBitwiseAmpersand : IIsEvenAlgorithm
+    internal class IsEvenAlgorithmBitwiseAmpersand : IsEvenAlgorithm
     {
-        public IIsEvenAlgorithmResponse Calculate(int number)
+        public IsEvenAlgorithmBitwiseAmpersand() : base(
+            new IsEvenAlgorithmResponseHandler(), 
+            new IsEvenAlgorithmBitwiseAmpersandCalculator())
         {
-            return (number & 1) == 0
-                ? new IsEvenAlgorithmResponseEven()
-                : new IsEvenAlgorithmResponseNotEven();
         }
     }
 }

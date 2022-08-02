@@ -2,7 +2,6 @@
 using IsEven.Implementation.Algorithms;
 using IsEven.Implementation.Request;
 using IsEven.Implementation.Response;
-using IsEven.Implementation.Service;
 
 namespace IsEven
 {

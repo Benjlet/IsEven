@@ -27,7 +27,6 @@ namespace IsEven.Base
                 return false;
 
             var serviceResponse = _isEvenAlgorithm.Calculate(number);
-
             return _isEvenResponseHandler.GetResult(serviceResponse);
         }
     }

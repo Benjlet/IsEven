@@ -4,14 +4,6 @@ namespace IsEven.Tests
 {
     public class IsEvenCalculatorModulusTests
     {
-        private IsEvenCalculatorModulus _isEvenCalculator;
-
-        [SetUp]
-        public void Setup()
-        {
-            _isEvenCalculator = new IsEvenCalculatorModulus();
-        }
-
         [Test]
         [TestCase(0)]
         [TestCase(2)]
@@ -19,8 +11,8 @@ namespace IsEven.Tests
         [TestCase(int.MinValue)]
         public void IsEven_WhereEven_ReturnsTrue(int testValue)
         {
-            var isEven = _isEvenCalculator.IsEven(testValue);
-            Assert.That(isEven);
+            Assert.That(
+                new IsEvenCalculatorModulus().IsEven(testValue));
         }
 
         [Test]
@@ -32,8 +24,8 @@ namespace IsEven.Tests
         [TestCase(-8675309)]
         public void IsEven_WhereNotEven_ReturnsFalse(int testValue)
         {
-            var isEven = _isEvenCalculator.IsEven(testValue);
-            Assert.That(isEven, Is.False);
+            Assert.That(
+                new IsEvenCalculatorModulus().IsEven(testValue), Is.False);
         }
     }
 }
