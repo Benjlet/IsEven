@@ -4,9 +4,6 @@ namespace IsEven.Implementation.Response
 {
     internal class IsEvenResponseHandler : IIsEvenResponseHandler
     {
-        public bool GetResult(IIsEvenAlgorithmResponse response)
-        {
-            return response?.IsEven ?? false;
-        }
+        public bool GetResult(IIsEvenAlgorithmResponse response) => response?.IsEven ?? false;
     }
 }

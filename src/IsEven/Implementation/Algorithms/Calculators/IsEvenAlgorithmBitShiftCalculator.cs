@@ -1,9 +1,20 @@
 ﻿using IsEven.Abstractions;
+using IsEven.Abstractions.NumberValueProvider;
 
 namespace IsEven.Implementation.Algorithms.Calculators
 {
     internal class IsEvenAlgorithmBitShiftCalculator : IIsEvenAlgorithmCalculator
     {
-        public bool IsEven(int number) => number >> 1 << 1 == number;
+        private readonly IIsEvenAlgorithmNumberValueProvider _isEvenAlgorithmNumberValueProvider;
+
+        internal IsEvenAlgorithmBitShiftCalculator(IIsEvenAlgorithmNumberValueProvider isEvenAlgorithmNumberValueProvider)
+        {
+            _isEvenAlgorithmNumberValueProvider = isEvenAlgorithmNumberValueProvider;
+        }
+
+        public bool IsEven(int number)
+        {
+            return number >> _isEvenAlgorithmNumberValueProvider.One << _isEvenAlgorithmNumberValueProvider.One == number;
+        }
     }
 }

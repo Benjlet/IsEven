@@ -1,6 +1,7 @@
 ﻿using IsEven.Base;
 using IsEven.Implementation.Algorithms.Calculators;
 using IsEven.Implementation.Algorithms.Response;
+using IsEven.Implementation.NumberValueProvider;
 
 namespace IsEven.Implementation.Algorithms
 {
@@ -8,7 +9,8 @@ namespace IsEven.Implementation.Algorithms
     {
         public IsEvenAlgorithmBitShift() : base(
             new IsEvenAlgorithmResponseHandler(),
-            new IsEvenAlgorithmBitShiftCalculator())
+            new IsEvenAlgorithmBitShiftCalculator(
+                new IsEvenAlgorithmNumberValueProvider()))
         {
         }
     }
