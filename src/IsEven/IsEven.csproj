@@ -18,12 +18,12 @@
     <PackageProjectUrl>https://github.com/Benjlet/IsEven</PackageProjectUrl>
     <Description>A robust, extensible, and blue-sky-thinking .NET library for calculating if an integer is even.</Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	<PackageIcon>icon.png</PackageIcon>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-	  <None Include="icon.png" Pack="true" PackagePath="" />
-	  <None Include="README.md" Pack="true" PackagePath="" />
+    <None Include="icon.png" Pack="true" PackagePath="" />
+    <None Include="README.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
