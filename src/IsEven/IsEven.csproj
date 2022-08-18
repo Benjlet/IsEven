@@ -8,7 +8,7 @@
 
   <PropertyGroup>
     <PackageId>IsEven</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>2.0.0</PackageVersion>
     <Authors>Benjlet</Authors>
     <Company>Benjlet</Company>
     <RepositoryType>git</RepositoryType>

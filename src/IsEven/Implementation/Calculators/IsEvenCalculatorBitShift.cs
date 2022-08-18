@@ -4,16 +4,10 @@ using IsEven.Implementation.Request;
 using IsEven.Implementation.Response;
 using IsEven.Implementation.ZeroIsEven;
 
-namespace IsEven
+namespace IsEven.Implementation.Calculators
 {
-    /// <summary>
-    /// IsEven calculator using BitShift.
-    /// </summary>
-    public class IsEvenCalculatorBitShift : IsEvenCalculator
+    internal class IsEvenCalculatorBitShift : IsEvenCalculatorBase
     {
-        /// <summary>
-        /// Initialises a new 'IsEven' calculator using an abstracted BitShift algorithm.
-        /// </summary>
         public IsEvenCalculatorBitShift() : base(
             new IsEvenAlgorithmBitShift(),
             new IsEvenRequestValidator(),

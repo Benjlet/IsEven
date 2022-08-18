@@ -2,6 +2,6 @@
 {
     internal interface IIsEvenAlgorithmCalculator
     {
-        bool IsEven(int number);
+        public bool IsEven(int number);
     }
 }

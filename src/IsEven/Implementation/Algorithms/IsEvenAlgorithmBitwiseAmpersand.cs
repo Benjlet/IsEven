@@ -12,6 +12,7 @@ namespace IsEven.Implementation.Algorithms
             new IsEvenAlgorithmBitwiseAmpersandCalculator(
                 new IsEvenAlgorithmNumberValueProvider()))
         {
+
         }
     }
 }

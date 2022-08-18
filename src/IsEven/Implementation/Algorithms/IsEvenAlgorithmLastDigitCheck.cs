@@ -5,11 +5,11 @@ using IsEven.Implementation.NumberValueProvider;
 
 namespace IsEven.Implementation.Algorithms
 {
-    internal class IsEvenAlgorithmModulus : IsEvenAlgorithm
+    internal class IsEvenAlgorithmLastDigitCheck : IsEvenAlgorithm
     {
-        public IsEvenAlgorithmModulus() : base(
+        public IsEvenAlgorithmLastDigitCheck() : base(
             new IsEvenAlgorithmResponseHandler(),
-            new IsEvenAlgorithmModulusCalculator(
+            new IsEvenAlgorithmLastDigitCheckCalculator(
                 new IsEvenAlgorithmNumberValueProvider()))
         {
 

@@ -12,6 +12,7 @@ namespace IsEven.Implementation.Algorithms
             new IsEvenAlgorithmBitShiftCalculator(
                 new IsEvenAlgorithmNumberValueProvider()))
         {
+
         }
     }
 }
