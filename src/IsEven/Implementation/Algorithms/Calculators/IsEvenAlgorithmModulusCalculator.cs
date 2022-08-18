@@ -12,6 +12,9 @@ namespace IsEven.Implementation.Algorithms.Calculators
             _isEvenAlgorithmNumberValueProvider = isEvenAlgorithmNumberValueProvider;
         }
 
-        public bool IsEven(int number) => number % _isEvenAlgorithmNumberValueProvider.Two == _isEvenAlgorithmNumberValueProvider.Zero;
+        public bool IsEven(int number)
+        {
+            return number % _isEvenAlgorithmNumberValueProvider.Two == _isEvenAlgorithmNumberValueProvider.Zero;
+        }
     }
 }

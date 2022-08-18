@@ -4,19 +4,13 @@ using IsEven.Implementation.Request;
 using IsEven.Implementation.Response;
 using IsEven.Implementation.ZeroIsEven;
 
-namespace IsEven
+namespace IsEven.Implementation.Calculators
 {
-    /// <summary>
-    /// IsEven calculator using Modulo Division.
-    /// </summary>
-    public class IsEvenCalculatorModulus : IsEvenCalculator
+    internal class IsEvenCalculatorModulus : IsEvenCalculatorBase
     {
-        /// <summary>
-        /// Initialises a new 'IsEven' calculator using an abstracted Modulo Division algorithm.
-        /// </summary>
         public IsEvenCalculatorModulus() : base(
             new IsEvenAlgorithmModulus(),
-            new IsEvenRequestValidator(), 
+            new IsEvenRequestValidator(),
             new IsEvenResponseHandler(),
             new IsEvenZeroIsEvenYes())
         {

@@ -2,9 +2,9 @@ using NUnit.Framework;
 
 namespace IsEven.Tests
 {
-    public class IsEvenCalculatorBitwiseAmpersandTests
+    public class IsEvenCalculatorLastDigitCheckTests
     {
-        private const AlgorithmType TestAlgorithmType = AlgorithmType.BitwiseAmpersand;
+        private const AlgorithmType TestAlgorithmType = AlgorithmType.LastDigitCheck;
 
         [Test]
         [TestCase(0)]

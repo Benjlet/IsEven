@@ -4,16 +4,10 @@ using IsEven.Implementation.Request;
 using IsEven.Implementation.Response;
 using IsEven.Implementation.ZeroIsEven;
 
-namespace IsEven
+namespace IsEven.Implementation.Calculators
 {
-    /// <summary>
-    /// IsEven calculator using BitwiseAmpersand.
-    /// </summary>
-    public class IsEvenCalculatorBitwiseAmpersand : IsEvenCalculator
+    internal class IsEvenCalculatorBitwiseAmpersand : IsEvenCalculatorBase
     {
-        /// <summary>
-        /// Initialises a new 'IsEven' calculator using an abstracted BitwiseAmpersand algorithm.
-        /// </summary>
         public IsEvenCalculatorBitwiseAmpersand() : base(
             new IsEvenAlgorithmBitwiseAmpersand(),
             new IsEvenRequestValidator(),
