@@ -1,4 +1,4 @@
-﻿namespace IsEven.Abstractions.NumberValueProvider
+﻿namespace IsEven.Implementation.Abstractions.NumberValueProvider
 {
     internal interface IIsEvenAlgorithmNumberValueProvider
     {

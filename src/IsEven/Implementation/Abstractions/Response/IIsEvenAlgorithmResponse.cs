@@ -1,4 +1,4 @@
-﻿namespace IsEven.Abstractions.Response
+﻿namespace IsEven.Implementation.Abstractions.Response
 {
     internal interface IIsEvenAlgorithmResponse
     {

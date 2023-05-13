@@ -1,6 +1,6 @@
-﻿using IsEven.Abstractions.Response;
+﻿using IsEven.Implementation.Abstractions.Response;
 
-namespace IsEven.Abstractions
+namespace IsEven.Implementation.Abstractions
 {
     internal interface IIsEvenAlgorithm
     {

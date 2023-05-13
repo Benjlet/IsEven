@@ -1,4 +1,4 @@
-﻿using IsEven.Abstractions.Response;
+﻿using IsEven.Implementation.Abstractions.Response;
 
 namespace IsEven.Implementation.Algorithms.Response
 {
