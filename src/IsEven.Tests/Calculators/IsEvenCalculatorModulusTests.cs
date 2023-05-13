@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace IsEven.Tests
+namespace IsEven.Tests.Calculators
 {
     public class IsEvenCalculatorModulusTests
     {

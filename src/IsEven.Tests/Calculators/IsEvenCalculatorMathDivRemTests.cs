@@ -1,10 +1,10 @@
 using NUnit.Framework;
 
-namespace IsEven.Tests
+namespace IsEven.Tests.Calculators
 {
-    public class IsEvenCalculatorBitwiseAmpersandTests
+    public class IsEvenCalculatorMathDivRemTests
     {
-        private const AlgorithmType TestAlgorithmType = AlgorithmType.BitwiseAmpersand;
+        private const AlgorithmType TestAlgorithmType = AlgorithmType.MathDivRem;
 
         [Test]
         [TestCase(0)]

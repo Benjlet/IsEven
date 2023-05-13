@@ -1,6 +1,6 @@
-﻿using IsEven.Abstractions;
-using IsEven.Abstractions.Response;
-using IsEven.Implementation.Response;
+﻿using IsEven.Implementation.Abstractions.Request;
+using IsEven.Implementation.Abstractions.Response;
+using IsEven.Implementation.Response.Validation;
 
 namespace IsEven.Implementation.Request
 {

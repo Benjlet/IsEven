@@ -1,10 +1,10 @@
 using NUnit.Framework;
 
-namespace IsEven.Tests
+namespace IsEven.Tests.Calculators
 {
-    public class IsEvenCalculatorLastDigitCheckTests
+    public class IsEvenCalculatorBitwiseAmpersandTests
     {
-        private const AlgorithmType TestAlgorithmType = AlgorithmType.LastDigitCheck;
+        private const AlgorithmType TestAlgorithmType = AlgorithmType.BitwiseAmpersand;
 
         [Test]
         [TestCase(0)]

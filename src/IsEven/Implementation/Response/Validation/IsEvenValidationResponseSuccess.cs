@@ -1,6 +1,6 @@
-﻿using IsEven.Abstractions.Response;
+﻿using IsEven.Implementation.Abstractions.Response;
 
-namespace IsEven.Implementation.Response
+namespace IsEven.Implementation.Response.Validation
 {
     internal class IsEvenValidationResponseSuccess : IIsEvenValidationResponse
     {

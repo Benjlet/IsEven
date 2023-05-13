@@ -1,4 +1,4 @@
-﻿namespace IsEven.Abstractions
+﻿namespace IsEven.Implementation.Abstractions
 {
     internal interface IIsEvenCalculator
     {

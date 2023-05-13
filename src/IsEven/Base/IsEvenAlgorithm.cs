@@ -1,5 +1,5 @@
-﻿using IsEven.Abstractions;
-using IsEven.Abstractions.Response;
+﻿using IsEven.Implementation.Abstractions;
+using IsEven.Implementation.Abstractions.Response;
 
 namespace IsEven.Base
 {

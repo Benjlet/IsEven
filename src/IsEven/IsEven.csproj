@@ -1,29 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <PackageId>IsEven</PackageId>
-    <PackageVersion>2.0.0</PackageVersion>
-    <Authors>Benjlet</Authors>
-    <Company>Benjlet</Company>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/Benjlet/IsEven</RepositoryUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageTags>iseven;even;int;enterprise;parody</PackageTags>
-    <PackageProjectUrl>https://github.com/Benjlet/IsEven</PackageProjectUrl>
-    <Description>A robust, extensible, and blue-sky-thinking .NET library for calculating if an integer is even.</Description>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageIcon>icon.png</PackageIcon>
-  </PropertyGroup>
+	<PropertyGroup>
+		<PackageId>IsEven</PackageId>
+		<PackageVersion>3.0.0</PackageVersion>
+		<Authors>Benjlet</Authors>
+		<Company>Benjlet</Company>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/Benjlet/IsEven</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>iseven;even;int;enterprise;parody</PackageTags>
+		<PackageProjectUrl>https://github.com/Benjlet/IsEven</PackageProjectUrl>
+		<Description>A robust, extensible, and blue-sky-thinking .NET library for calculating if an integer is even.</Description>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageIcon>icon.png</PackageIcon>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Include="icon.png" Pack="true" PackagePath="" />
-    <None Include="README.md" Pack="true" PackagePath="" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="icon.png" Pack="true" PackagePath="" />
+		<None Include="README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+			<_Parameter1>$(AssemblyName).Tests</_Parameter1>
+		</AssemblyAttribute>
+
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+			<_Parameter1>DynamicProxyGenAssembly2</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
 
 </Project>

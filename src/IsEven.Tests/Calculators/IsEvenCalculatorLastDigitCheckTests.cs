@@ -1,10 +1,10 @@
 using NUnit.Framework;
 
-namespace IsEven.Tests
+namespace IsEven.Tests.Calculators
 {
-    public class IsEvenCalculatorMathDivRemTests
+    public class IsEvenCalculatorLastDigitCheckTests
     {
-        private const AlgorithmType TestAlgorithmType = AlgorithmType.MathDivRem;
+        private const AlgorithmType TestAlgorithmType = AlgorithmType.LastDigitCheck;
 
         [Test]
         [TestCase(0)]

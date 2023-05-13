@@ -1,4 +1,4 @@
-﻿using IsEven.Abstractions.NumberValueProvider;
+﻿using IsEven.Implementation.Abstractions.NumberValueProvider;
 
 namespace IsEven.Implementation.NumberValueProvider
 {

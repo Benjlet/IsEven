@@ -1,4 +1,4 @@
-﻿using IsEven.Abstractions;
+﻿using IsEven.Implementation.Abstractions;
 
 namespace IsEven.Implementation.ZeroIsEven
 {

@@ -1,5 +1,5 @@
-﻿using IsEven.Abstractions;
-using IsEven.Abstractions.NumberValueProvider;
+﻿using IsEven.Implementation.Abstractions;
+using IsEven.Implementation.Abstractions.NumberValueProvider;
 
 namespace IsEven.Implementation.Algorithms.Calculators
 {
