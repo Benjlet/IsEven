@@ -2,6 +2,8 @@ name: Release IsEven
 
 on:
   pull_request:
+    types:
+      - closed
     branches:
       - main
 
