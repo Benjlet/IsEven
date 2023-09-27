@@ -25,9 +25,9 @@ jobs:
     
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
-        with:
-          dotnet-version: '7.0.x'
-          include-prerelease: true
+      with:
+        dotnet-version: '7.0.x'
+        include-prerelease: true
 
     - name: Build
       run: dotnet build --no-restore
