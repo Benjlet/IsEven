@@ -1,22 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<PropertyGroup>
 		<PackageId>IsEven</PackageId>
-		<PackageVersion>3.0.0</PackageVersion>
+		<PackageVersion>4.0.0</PackageVersion>
 		<Authors>Benjlet</Authors>
 		<Company>Benjlet</Company>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/Benjlet/IsEven</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageTags>iseven;even;int;enterprise;parody</PackageTags>
+		<PackageTags>iseven;even;number;int;integer;enterprise;parody</PackageTags>
 		<PackageProjectUrl>https://github.com/Benjlet/IsEven</PackageProjectUrl>
-		<Description>A robust, extensible, and blue-sky-thinking .NET library for calculating if an integer is even.</Description>
+		<Description>A robust, extensible, and blue-sky-thinking .NET library for calculating if a number is even.</Description>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>

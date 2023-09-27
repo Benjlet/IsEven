@@ -26,6 +26,7 @@ namespace IsEven.Tests.Calculators
             _mockCalculator.Setup(x => x.IsOddOrEven(It.IsAny<int>())).Returns(true);
 
             _mockRequestHandler.Setup(x => x.Handle(It.IsAny<AlgorithmType>())).Returns(_mockCalculator.Object);
+
             _mockResponseHandler.Setup(x => x.Handle(It.IsAny<Func<bool>>())).Returns(ResponseHandlerSuccess);
 
             _service = new IsEvenService(_mockRequestHandler.Object, _mockResponseHandler.Object);
@@ -36,14 +37,9 @@ namespace IsEven.Tests.Calculators
         {
             _mockResponseHandler.Setup(x => x.Handle(It.IsAny<Func<bool>>())).Returns(ResponseHandlerSuccess);
 
-            var resultAlgorithm = _service.IsEven(2, AlgorithmType.MathDivRem);
-            var resultWithoutAlgorithm = _service.IsEven(2);
+            bool resultAlgorithm = _service.IsEven(2, AlgorithmType.Modulus);
 
-            Assert.Multiple(() =>
-            {
-                Assert.That(resultAlgorithm, Is.True);
-                Assert.That(resultWithoutAlgorithm, Is.True);
-            });
+            Assert.That(resultAlgorithm, Is.True);
         }
 
         [Test]
@@ -51,14 +47,9 @@ namespace IsEven.Tests.Calculators
         {
             _mockResponseHandler.Setup(x => x.Handle(It.IsAny<Func<bool>>())).Returns(ResponseHandlerFailure);
 
-            var resultAlgorithm = _service.IsEven(2, AlgorithmType.MathDivRem);
-            var resultWithoutAlgorithm = _service.IsEven(2);
-
-            Assert.Multiple(() =>
-            {
-                Assert.That(resultAlgorithm, Is.False);
-                Assert.That(resultWithoutAlgorithm, Is.False);
-            });
+            bool resultAlgorithm = _service.IsEven(2, AlgorithmType.Modulus);
+            
+            Assert.That(resultAlgorithm, Is.False);
         }
 
         [Test]
@@ -66,14 +57,9 @@ namespace IsEven.Tests.Calculators
         {
             _mockResponseHandler.Setup(x => x.Handle(It.IsAny<Func<bool>>())).Returns(ResponseHandlerSuccess);
 
-            var resultAlgorithm = _service.IsOdd(1, AlgorithmType.MathDivRem);
-            var resultWithoutAlgorithm = _service.IsOdd(1);
-
-            Assert.Multiple(() =>
-            {
-                Assert.That(resultAlgorithm, Is.True);
-                Assert.That(resultWithoutAlgorithm, Is.True);
-            });
+            bool resultAlgorithm = _service.IsOdd(1, AlgorithmType.Modulus);
+            
+            Assert.That(resultAlgorithm, Is.True);
         }
 
         [Test]
@@ -81,14 +67,9 @@ namespace IsEven.Tests.Calculators
         {
             _mockResponseHandler.Setup(x => x.Handle(It.IsAny<Func<bool>>())).Returns(ResponseHandlerFailure);
 
-            var resultAlgorithm = _service.IsOdd(1, AlgorithmType.MathDivRem);
-            var resultWithoutAlgorithm = _service.IsOdd(1);
-
-            Assert.Multiple(() =>
-            {
-                Assert.That(resultAlgorithm, Is.False);
-                Assert.That(resultWithoutAlgorithm, Is.False);
-            });
+            bool resultAlgorithm = _service.IsOdd(1, AlgorithmType.Modulus);
+            
+            Assert.That(resultAlgorithm, Is.False);
         }
 
         [Test]
@@ -96,7 +77,7 @@ namespace IsEven.Tests.Calculators
         {
             _mockResponseHandler.Setup(x => x.Handle(It.IsAny<Func<bool>>())).Returns(ResponseHandlerSuccess);
 
-            var resultAlgorithm = _service.IsOddOrEven(1);
+            bool resultAlgorithm = _service.IsOddOrEven(1, AlgorithmType.Modulus);
 
             Assert.That(resultAlgorithm, Is.True);
         }
@@ -106,7 +87,7 @@ namespace IsEven.Tests.Calculators
         {
             _mockResponseHandler.Setup(x => x.Handle(It.IsAny<Func<bool>>())).Returns(ResponseHandlerFailure);
 
-            var resultAlgorithm = _service.IsOddOrEven(1);
+            bool resultAlgorithm = _service.IsOddOrEven(1, AlgorithmType.Modulus);
 
             Assert.That(resultAlgorithm, Is.False);
         }

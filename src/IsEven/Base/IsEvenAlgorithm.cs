@@ -1,5 +1,6 @@
 ﻿using IsEven.Implementation.Abstractions;
 using IsEven.Implementation.Abstractions.Response;
+using System.Numerics;
 
 namespace IsEven.Base
 {
@@ -16,7 +17,7 @@ namespace IsEven.Base
             _isEvenAlgorithmCalculator = isEvenAlgorithmCalculator;
         }
 
-        public IIsEvenAlgorithmResponse Calculate(int number)
+        public IIsEvenAlgorithmResponse Calculate<T>(T number) where T : INumber<T>, IModulusOperators<T, T, T>
         {
             return _isEvenAlgorithmResponseHandler.GetResponse(_isEvenAlgorithmCalculator.IsEven(number));
         }

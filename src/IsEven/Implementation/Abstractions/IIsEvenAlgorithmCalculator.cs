@@ -1,7 +1,9 @@
-﻿namespace IsEven.Implementation.Abstractions
+﻿using System.Numerics;
+
+namespace IsEven.Implementation.Abstractions
 {
     internal interface IIsEvenAlgorithmCalculator
     {
-        public bool IsEven(int number);
+        bool IsEven<T>(T number) where T : INumber<T>, IModulusOperators<T, T, T>;
     }
 }

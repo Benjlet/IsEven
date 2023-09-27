@@ -30,7 +30,7 @@ namespace IsEven.Tests.Calculators
         [Test]
         public void Calculate_EvenResult_ReturnsEven()
         {
-            var result = _algorithm.Calculate(0);
+            IIsEvenAlgorithmResponse result = _algorithm.Calculate(0);
 
             Assert.That(result.IsEven);
         }

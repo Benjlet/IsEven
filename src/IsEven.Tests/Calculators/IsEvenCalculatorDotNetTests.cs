@@ -2,9 +2,9 @@ using NUnit.Framework;
 
 namespace IsEven.Tests.Calculators
 {
-    public class IsEvenCalculatorMathDivRemTests
+    public class IsEvenCalculatorDotNetTests
     {
-        private const AlgorithmType TestAlgorithmType = AlgorithmType.MathDivRem;
+        private const AlgorithmType TestAlgorithmType = AlgorithmType.DotNet;
 
         [Test]
         [TestCase(0)]

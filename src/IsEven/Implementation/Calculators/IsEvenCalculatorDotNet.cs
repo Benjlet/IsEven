@@ -1,18 +1,18 @@
 ﻿using IsEven.Base;
+using IsEven.Implementation.Abstractions;
 using IsEven.Implementation.Algorithms;
 using IsEven.Implementation.Request;
 using IsEven.Implementation.Response;
-using IsEven.Implementation.ZeroIsEven;
 
 namespace IsEven.Implementation.Calculators
 {
-    internal class IsEvenCalculatorBitwiseAmpersand : IsEvenCalculatorBase
+    internal class IsEvenCalculatorDotNet : IsEvenCalculatorBase
     {
-        public IsEvenCalculatorBitwiseAmpersand() : base(
-            new IsEvenAlgorithmBitwiseAmpersand(),
+        public IsEvenCalculatorDotNet(IIsEvenClientSettings settings) : base(
+            new IsEvenAlgorithmDotNet(),
             new IsEvenRequestValidator(),
             new IsEvenResponseHandler(),
-            new IsEvenZeroIsEvenYes())
+            settings)
         {
 
         }

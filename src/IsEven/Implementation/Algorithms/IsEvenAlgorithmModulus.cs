@@ -1,7 +1,6 @@
 ﻿using IsEven.Base;
 using IsEven.Implementation.Algorithms.Calculators;
 using IsEven.Implementation.Algorithms.Response;
-using IsEven.Implementation.NumberValueProvider;
 
 namespace IsEven.Implementation.Algorithms
 {
@@ -9,8 +8,7 @@ namespace IsEven.Implementation.Algorithms
     {
         public IsEvenAlgorithmModulus() : base(
             new IsEvenAlgorithmResponseHandler(),
-            new IsEvenAlgorithmModulusCalculator(
-                new IsEvenAlgorithmNumberValueProvider()))
+            new IsEvenAlgorithmModulusCalculator())
         {
 
         }

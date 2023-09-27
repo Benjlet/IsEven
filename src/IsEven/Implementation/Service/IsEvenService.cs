@@ -1,5 +1,6 @@
 ﻿using IsEven.Implementation.Abstractions;
 using IsEven.Implementation.Abstractions.Service;
+using System.Numerics;
 
 namespace IsEven.Implementation.Service
 {
@@ -16,11 +17,11 @@ namespace IsEven.Implementation.Service
             _responseProvider = responseProvider;
         }
 
-        public bool IsEven(int number, AlgorithmType algorithmType)
+        public bool IsEven<T>(T number, AlgorithmType algorithmType) where T : INumber<T>, IModulusOperators<T, T, T>
         {
-            var calculator = _requestHandler.Handle(algorithmType);
+            IIsEvenCalculator calculator = _requestHandler.Handle(algorithmType);
 
-            var isEvenServiceResponse = _responseProvider.Handle(() =>
+            IIsEvenServiceResponse isEvenServiceResponse = _responseProvider.Handle(() =>
             {
                 return calculator.IsEven(number);
             });
@@ -28,11 +29,11 @@ namespace IsEven.Implementation.Service
             return isEvenServiceResponse.GetResult();
         }
 
-        public bool IsOdd(int number, AlgorithmType algorithmType)
+        public bool IsOdd<T>(T number, AlgorithmType algorithmType) where T : INumber<T>, IModulusOperators<T, T, T>
         {
-            var calculator = _requestHandler.Handle(algorithmType);
+            IIsEvenCalculator calculator = _requestHandler.Handle(algorithmType);
 
-            var isEvenServiceResponse = _responseProvider.Handle(() =>
+            IIsEvenServiceResponse isEvenServiceResponse = _responseProvider.Handle(() =>
             {
                 return calculator.IsOdd(number);
             });
@@ -40,26 +41,16 @@ namespace IsEven.Implementation.Service
             return isEvenServiceResponse.GetResult();
         }
 
-        public bool IsOddOrEven(int number)
-        {
-            var calculator = _requestHandler.Handle();
+        public bool IsOddOrEven<T>(T number, AlgorithmType algorithmType) where T : INumber<T>, IModulusOperators<T, T, T>
+{
+            IIsEvenCalculator calculator = _requestHandler.Handle();
 
-            var isEvenServiceResponse = _responseProvider.Handle(() =>
+            IIsEvenServiceResponse isEvenServiceResponse = _responseProvider.Handle(() =>
             {
                 return calculator.IsOddOrEven(number);
             });
 
             return isEvenServiceResponse.GetResult();
-        }
-
-        public bool IsOdd(int number)
-        {
-            return IsOdd(number, AlgorithmType.Modulus);
-        }
-
-        public bool IsEven(int number)
-        {
-            return IsEven(number, AlgorithmType.Modulus);
         }
     }
 }

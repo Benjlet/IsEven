@@ -11,23 +11,13 @@
         Modulus,
 
         /// <summary>
-        /// BitShift algorithm.
-        /// </summary>
-        BitShift,
-
-        /// <summary>
-        /// Bitwise ampersand algorithm.
-        /// </summary>
-        BitwiseAmpersand,
-
-        /// <summary>
         /// Character-comparison on the last digit.
         /// </summary>
         LastDigitCheck,
 
         /// <summary>
-        /// DivRem method of the Math library.
+        /// Trust .NET.
         /// </summary>
-        MathDivRem
+        DotNet
     }
 }

@@ -1,4 +1,5 @@
-﻿using IsEven.Implementation.Factories;
+﻿using IsEven.Implementation.Abstractions;
+using System.Numerics;
 
 namespace IsEven
 {
@@ -8,80 +9,54 @@ namespace IsEven
     public class IsEvenCalculator
     {
         /// <summary>
-        /// Calculates if the provided number is even, using Modulo division.
+        /// Calculates if the supplied number is even, using the supplied algorithm type.
         /// </summary>
-        /// <param name="number">Number to evaluate.</param>
-        /// <exception cref="ArgumentException">Thrown if the number argument does not pass validation.</exception>
+        /// <param name="number">The number for even-ness evaluation.</param>
+        /// <param name="algorithmType">The algorithm to use for even-ness evaluation.</param>
+        /// <param name="settings">The settings for even-ness evaluation.</param>
         /// <returns>
-        /// True/false: a boolean value, indicating if the integer is even.
-        /// Even is represented by true and not even - or odd, as one could infer - is represented by false. 
-        /// Take, for example, the number 2, which is returned as true; 1, conversely, would be returned as false.
+        /// <c>true</c> if the number is even. <c>false</c> if the number is either:<para></para>
+        /// a) odd<para></para>
+        /// b) not an integer, where <see cref="IIsEvenClientSettings.IntegersOnly"/> is <c>true</c>.
         /// </returns>
-        public static bool IsEven(int number)
+        public static bool IsEven<T>(T number, AlgorithmType algorithmType = AlgorithmType.Modulus, IIsEvenClientSettings settings = null) where T : INumber<T>, IModulusOperators<T, T, T>
         {
-            return IsEven(number, AlgorithmType.Modulus);
+            var client = settings == null ? new IsEvenClient() : new IsEvenClient(settings);
+            return client.IsEven(number, algorithmType);
         }
 
         /// <summary>
-        /// Calculates if the provided number is even, using a specific algorithm.
+        /// Calculates if the supplied number is odd, using the supplied algorithm type.
         /// </summary>
-        /// <param name="number">Number to evaluate.</param>
-        /// <param name="algorithmType">The type of algorithm to use for determining the even-ness of the number, Modulus by default.</param>
-        /// <exception cref="ArgumentException">Thrown if the number argument does not pass validation.</exception>
+        /// <param name="number">The number for odd-ness evaluation.</param>
+        /// <param name="algorithmType">The algorithm to use for odd-ness evaluation.</param>
+        /// <param name="settings">The settings for odd-ness evaluation.</param>
         /// <returns>
-        /// True/false: a boolean value, indicating if the integer is even.
-        /// Even is represented by true and not even - or odd, as one could infer - is represented by false. 
-        /// Take, for example, the number 2, which is returned as true; 1, conversely, would be returned as false.
+        /// <c>true</c> if the number is odd. <c>false</c> if the number is either:<para></para>
+        /// a) even<para></para>
+        /// b) not an integer, where <see cref="IIsEvenClientSettings.IntegersOnly"/> is <c>true</c>.
         /// </returns>
-        public static bool IsEven(int number, AlgorithmType algorithmType)
+        public static bool IsOdd<T>(T number, AlgorithmType algorithmType = AlgorithmType.Modulus, IIsEvenClientSettings settings = null) where T : INumber<T>, IModulusOperators<T, T, T>
         {
-            var calculator = IsEvenCalculatorFactory.Create(algorithmType);
-            return calculator.IsEven(number);
+            var client = settings == null ? new IsEvenClient() : new IsEvenClient(settings);
+            return client.IsOdd(number, algorithmType);
         }
 
         /// <summary>
-        /// Calculates if the provided number is odd, using Modulo division.
+        /// Calculates if the supplied number is either odd or even, using the supplied algorithm type.
         /// </summary>
-        /// <param name="number">Number to evaluate.</param>
-        /// <exception cref="ArgumentException">Thrown if the number argument does not pass validation.</exception>
+        /// <param name="number">The number for odd-or-even-ness evaluation.</param>
+        /// <param name="algorithmType">The algorithm to use for odd-or-even-ness evaluation.</param>
+        /// <param name="settings">The settings for odd-or-even-ness evaluation.</param>
         /// <returns>
-        /// True/false: a boolean value, indicating if the integer is odd.
-        /// Odd is represented by true and Even is represented by false. 
-        /// Take, for example, the number 2, which is returned as true; 1, conversely, would be returned as false.
+        /// <c>true</c> if the number is either odd or even. <c>false</c> if the number is:<para></para>
+        /// a) not odd or even<para></para>
+        /// b) not an integer, where <see cref="IIsEvenClientSettings.IntegersOnly"/> is <c>true</c>.
         /// </returns>
-        public static bool IsOdd(int number)
+        public static bool IsOddOrEven<T>(T number, AlgorithmType algorithmType = AlgorithmType.Modulus, IIsEvenClientSettings settings = null) where T : INumber<T>, IModulusOperators<T, T, T>
         {
-            return IsOdd(number, AlgorithmType.Modulus);
-        }
-
-        /// <summary>
-        /// Calculates if the provided number is odd, using a specific algorithm.
-        /// </summary>
-        /// <param name="number">Number to evaluate.</param>
-        /// <param name="algorithmType">The type of algorithm to use for determining the odd-ness of the number, Modulus by default.</param>
-        /// <exception cref="ArgumentException">Thrown if the number argument does not pass validation.</exception>
-        /// <returns>
-        /// True/false: a boolean value, indicating if the integer is odd.
-        /// Odd is represented by true and Even is represented by false. 
-        /// Take, for example, the number 2, which is returned as true; 1, conversely, would be returned as false.
-        /// </returns>
-        public static bool IsOdd(int number, AlgorithmType algorithmType)
-        {
-            var calculator = IsEvenCalculatorFactory.Create(algorithmType);
-            return calculator.IsOdd(number);
-        }
-
-        /// <summary>
-        /// Calculates if the provided number is either odd or even.
-        /// </summary>
-        /// <param name="number">Number to evaluate.</param>
-        /// <returns>
-        /// A boolean value, indicating if the number is odd (true), even (true), or not odd-or-even (false).
-        /// </returns>
-        public static bool IsOddOrEven(int number)
-        {
-            var calculator = IsEvenCalculatorFactory.Create(AlgorithmType.Modulus);
-            return calculator.IsOddOrEven(number);
+            var client = settings == null ? new IsEvenClient() : new IsEvenClient(settings);
+            return client.IsOddOrEven(number, algorithmType);
         }
     }
 }
