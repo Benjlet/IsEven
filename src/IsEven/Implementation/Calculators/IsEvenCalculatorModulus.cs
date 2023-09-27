@@ -1,18 +1,18 @@
 ﻿using IsEven.Base;
+using IsEven.Implementation.Abstractions;
 using IsEven.Implementation.Algorithms;
 using IsEven.Implementation.Request;
 using IsEven.Implementation.Response;
-using IsEven.Implementation.ZeroIsEven;
 
 namespace IsEven.Implementation.Calculators
 {
     internal class IsEvenCalculatorModulus : IsEvenCalculatorBase
     {
-        public IsEvenCalculatorModulus() : base(
+        public IsEvenCalculatorModulus(IIsEvenClientSettings settings) : base(
             new IsEvenAlgorithmModulus(),
             new IsEvenRequestValidator(),
             new IsEvenResponseHandler(),
-            new IsEvenZeroIsEvenYes())
+            settings)
         {
 
         }

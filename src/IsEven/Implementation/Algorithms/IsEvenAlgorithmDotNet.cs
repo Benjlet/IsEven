@@ -4,11 +4,11 @@ using IsEven.Implementation.Algorithms.Response;
 
 namespace IsEven.Implementation.Algorithms
 {
-    internal class IsEvenAlgorithmLastDigitCheck : IsEvenAlgorithm
+    internal class IsEvenAlgorithmDotNet : IsEvenAlgorithm
     {
-        public IsEvenAlgorithmLastDigitCheck() : base(
+        public IsEvenAlgorithmDotNet() : base(
             new IsEvenAlgorithmResponseHandler(),
-            new IsEvenAlgorithmLastDigitCheckCalculator())
+            new IsEvenAlgorithmDotNetCalculator())
         {
 
         }

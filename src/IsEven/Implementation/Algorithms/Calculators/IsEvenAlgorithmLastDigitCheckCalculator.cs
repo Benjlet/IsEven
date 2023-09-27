@@ -1,27 +1,21 @@
 ﻿using IsEven.Implementation.Abstractions;
-using IsEven.Implementation.Abstractions.NumberValueProvider;
+using IsEven.Implementation.Extensions;
+using System.Numerics;
 
 namespace IsEven.Implementation.Algorithms.Calculators
 {
     internal class IsEvenAlgorithmLastDigitCheckCalculator : IIsEvenAlgorithmCalculator
     {
-        private readonly IIsEvenAlgorithmNumberValueProvider _isEvenAlgorithmNumberValueProvider;
-
-        internal IsEvenAlgorithmLastDigitCheckCalculator(IIsEvenAlgorithmNumberValueProvider isEvenAlgorithmNumberValueProvider)
+        public bool IsEven<T>(T number) where T : INumber<T>, IModulusOperators<T, T, T>
         {
-            _isEvenAlgorithmNumberValueProvider = isEvenAlgorithmNumberValueProvider;
-        }
-
-        public bool IsEven(int number)
-        {
-            var numberText = number.ToString();
+            string numberText = number.ToString().LastCharacter();
 
             return
-                (int)char.GetNumericValue(numberText[^_isEvenAlgorithmNumberValueProvider.One]) == _isEvenAlgorithmNumberValueProvider.Zero ||
-                (int)char.GetNumericValue(numberText[^_isEvenAlgorithmNumberValueProvider.One]) == _isEvenAlgorithmNumberValueProvider.Two ||
-                (int)char.GetNumericValue(numberText[^_isEvenAlgorithmNumberValueProvider.One]) == _isEvenAlgorithmNumberValueProvider.Four ||
-                (int)char.GetNumericValue(numberText[^_isEvenAlgorithmNumberValueProvider.One]) == _isEvenAlgorithmNumberValueProvider.Six ||
-                (int)char.GetNumericValue(numberText[^_isEvenAlgorithmNumberValueProvider.One]) == _isEvenAlgorithmNumberValueProvider.Eight;
+                numberText[^1] == '0' ||
+                numberText[^1] == '2' ||
+                numberText[^1] == '4' ||
+                numberText[^1] == '6' ||
+                numberText[^1] == '8';
         }
     }
 }

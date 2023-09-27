@@ -5,14 +5,12 @@ namespace IsEven.Implementation.Factories
 {
     internal static class IsEvenCalculatorFactory
     {
-        internal static IIsEvenCalculator Create(AlgorithmType algorithmType) => algorithmType switch
+        internal static IIsEvenCalculator Create(AlgorithmType algorithmType, IIsEvenClientSettings settings) => algorithmType switch
         {
-            AlgorithmType.BitwiseAmpersand => new IsEvenCalculatorBitwiseAmpersand(),
-            AlgorithmType.LastDigitCheck => new IsEvenCalculatorLastDigitCheck(),
-            AlgorithmType.MathDivRem => new IsEvenCalculatorMathDivRem(),
-            AlgorithmType.BitShift => new IsEvenCalculatorBitShift(),
-            AlgorithmType.Modulus => new IsEvenCalculatorModulus(),
-            _ => new IsEvenCalculatorModulus(),
+            AlgorithmType.Modulus => new IsEvenCalculatorModulus(settings),
+            AlgorithmType.LastDigitCheck => new IsEvenCalculatorLastDigitCheck(settings),
+            AlgorithmType.DotNet => new IsEvenCalculatorDotNet(settings),
+            _ => new IsEvenCalculatorModulus(settings),
         };
     }
 }

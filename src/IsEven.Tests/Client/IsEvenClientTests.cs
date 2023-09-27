@@ -14,7 +14,6 @@ namespace IsEven.Tests.Calculators
         {
             _mockIsEvenService = new Mock<IIsEvenService>();
 
-            _mockIsEvenService.Setup(x => x.IsEven(It.IsAny<int>())).Returns(true);
             _mockIsEvenService.Setup(x => x.IsEven(It.IsAny<int>(), It.IsAny<AlgorithmType>())).Returns(true);
 
             _client = new IsEvenClient(_mockIsEvenService.Object);
@@ -23,11 +22,10 @@ namespace IsEven.Tests.Calculators
         [Test]
         public void IsEven_DependenciesReturnsTrue_ReturnsTrue()
         {
-            _mockIsEvenService.Setup(x => x.IsEven(It.IsAny<int>())).Returns(true);
             _mockIsEvenService.Setup(x => x.IsEven(It.IsAny<int>(), It.IsAny<AlgorithmType>())).Returns(true);
 
-            var result = _client.IsEven(3);
-            var resultWithoutAlgorithm = _client.IsEven(3, AlgorithmType.MathDivRem);
+            bool result = _client.IsEven(3);
+            bool resultWithoutAlgorithm = _client.IsEven(3, AlgorithmType.Modulus);
 
             Assert.Multiple(() =>
             {
@@ -39,11 +37,10 @@ namespace IsEven.Tests.Calculators
         [Test]
         public void IsEven_DependenciesReturnsFalse_ReturnsFalse()
         {
-            _mockIsEvenService.Setup(x => x.IsEven(It.IsAny<int>())).Returns(false);
             _mockIsEvenService.Setup(x => x.IsEven(It.IsAny<int>(), It.IsAny<AlgorithmType>())).Returns(false);
 
-            var result = _client.IsEven(3);
-            var resultWithoutAlgorithm = _client.IsEven(3, AlgorithmType.MathDivRem);
+            bool result = _client.IsEven(3);
+            bool resultWithoutAlgorithm = _client.IsEven(3, AlgorithmType.Modulus);
 
             Assert.Multiple(() =>
             {
@@ -55,11 +52,10 @@ namespace IsEven.Tests.Calculators
         [Test]
         public void IsOdd_DependenciesReturnsTrue_ReturnsTrue()
         {
-            _mockIsEvenService.Setup(x => x.IsOdd(It.IsAny<int>())).Returns(true);
             _mockIsEvenService.Setup(x => x.IsOdd(It.IsAny<int>(), It.IsAny<AlgorithmType>())).Returns(true);
 
-            var result = _client.IsOdd(3);
-            var resultWithoutAlgorithm = _client.IsOdd(3, AlgorithmType.MathDivRem);
+            bool result = _client.IsOdd(3);
+            bool resultWithoutAlgorithm = _client.IsOdd(3, AlgorithmType.Modulus);
 
             Assert.Multiple(() =>
             {
@@ -71,11 +67,10 @@ namespace IsEven.Tests.Calculators
         [Test]
         public void IsOdd_DependenciesReturnsFalse_ReturnsFalse()
         {
-            _mockIsEvenService.Setup(x => x.IsOdd(It.IsAny<int>())).Returns(false);
             _mockIsEvenService.Setup(x => x.IsOdd(It.IsAny<int>(), It.IsAny<AlgorithmType>())).Returns(false);
 
-            var result = _client.IsOdd(3);
-            var resultWithoutAlgorithm = _client.IsOdd(3, AlgorithmType.MathDivRem);
+            bool result = _client.IsOdd(3);
+            bool resultWithoutAlgorithm = _client.IsOdd(3, AlgorithmType.Modulus);
 
             Assert.Multiple(() =>
             {
@@ -87,9 +82,9 @@ namespace IsEven.Tests.Calculators
         [Test]
         public void IsOddOrEven_DependenciesReturnsTrue_ReturnsTrue()
         {
-            _mockIsEvenService.Setup(x => x.IsOddOrEven(It.IsAny<int>())).Returns(true);
+            _mockIsEvenService.Setup(x => x.IsOddOrEven(It.IsAny<int>(), AlgorithmType.Modulus)).Returns(true);
 
-            var result = _client.IsOddOrEven(3);
+            bool result = _client.IsOddOrEven(3);
 
             Assert.That(result);
         }
@@ -97,9 +92,9 @@ namespace IsEven.Tests.Calculators
         [Test]
         public void IsOddOrEven_DependenciesReturnsFalse_ReturnsFalse()
         {
-            _mockIsEvenService.Setup(x => x.IsOddOrEven(It.IsAny<int>())).Returns(false);
+            _mockIsEvenService.Setup(x => x.IsOddOrEven(It.IsAny<int>(), AlgorithmType.Modulus)).Returns(false);
 
-            var result = _client.IsOddOrEven(3);
+            bool result = _client.IsOddOrEven(3);
 
             Assert.That(!result);
         }
