@@ -23,14 +23,6 @@ namespace IsEven.Tests.Calculators
                 Assert.That(sut.IsEven(number, algorithmType), Is.EqualTo(isEvenInteger));
                 Assert.That(sut.IsOddOrEven(number, algorithmType), Is.EqualTo(isInteger));
                 Assert.That(sut.IsOdd(number, algorithmType), Is.EqualTo(isOddInteger));
-
-                Assert.That(number.IsEven(algorithmType), Is.EqualTo(isEvenInteger));
-                Assert.That(number.IsOddOrEven(algorithmType), Is.EqualTo(isInteger));
-                Assert.That(number.IsOdd(algorithmType), Is.EqualTo(isOddInteger));
-
-                Assert.That(IsEvenCalculator.IsEven(number, algorithmType), Is.EqualTo(isEvenInteger));
-                Assert.That(IsEvenCalculator.IsOddOrEven(number, algorithmType), Is.EqualTo(isInteger));
-                Assert.That(IsEvenCalculator.IsOdd(number, algorithmType), Is.EqualTo(isOddInteger));
             }
         }
 
@@ -51,14 +43,6 @@ namespace IsEven.Tests.Calculators
                 Assert.That(sut.IsEven(number, algorithmType), Is.EqualTo(isEvenInteger));
                 Assert.That(sut.IsOddOrEven(number, algorithmType), Is.EqualTo(isInteger));
                 Assert.That(sut.IsOdd(number, algorithmType), Is.EqualTo(isOddInteger));
-
-                Assert.That(number.IsEven(algorithmType), Is.EqualTo(isEvenInteger));
-                Assert.That(number.IsOddOrEven(algorithmType), Is.EqualTo(isInteger));
-                Assert.That(number.IsOdd(algorithmType), Is.EqualTo(isOddInteger));
-
-                Assert.That(IsEvenCalculator.IsEven(number, algorithmType), Is.EqualTo(isEvenInteger));
-                Assert.That(IsEvenCalculator.IsOddOrEven(number, algorithmType), Is.EqualTo(isInteger));
-                Assert.That(IsEvenCalculator.IsOdd(number, algorithmType), Is.EqualTo(isOddInteger));
             }
         }
 
@@ -78,14 +62,6 @@ namespace IsEven.Tests.Calculators
                 Assert.That(sut.IsEven(decimalValue, algorithmType), Is.EqualTo(isEvenInteger));
                 Assert.That(sut.IsOddOrEven(decimalValue, algorithmType), Is.EqualTo(isInteger));
                 Assert.That(sut.IsOdd(decimalValue, algorithmType), Is.EqualTo(isOddInteger));
-
-                Assert.That(decimalValue.IsEven(algorithmType), Is.EqualTo(isEvenInteger));
-                Assert.That(decimalValue.IsOddOrEven(algorithmType), Is.EqualTo(isInteger));
-                Assert.That(decimalValue.IsOdd(algorithmType), Is.EqualTo(isOddInteger));
-
-                Assert.That(IsEvenCalculator.IsEven(decimalValue, algorithmType), Is.EqualTo(isEvenInteger));
-                Assert.That(IsEvenCalculator.IsOddOrEven(decimalValue, algorithmType), Is.EqualTo(isInteger));
-                Assert.That(IsEvenCalculator.IsOdd(decimalValue, algorithmType), Is.EqualTo(isOddInteger));
             }
         }
 
@@ -111,14 +87,6 @@ namespace IsEven.Tests.Calculators
                     Assert.That(sut.IsEven(floatValue, algorithmType));
                     Assert.That(sut.IsOddOrEven(floatValue, algorithmType));
                     Assert.That(sut.IsOdd(floatValue, algorithmType), Is.False);
-
-                    Assert.That(floatValue.IsEven(algorithmType, settings));
-                    Assert.That(floatValue.IsOddOrEven(algorithmType, settings));
-                    Assert.That(floatValue.IsOdd(algorithmType, settings), Is.False);
-
-                    Assert.That(IsEvenCalculator.IsEven(floatValue, algorithmType, settings));
-                    Assert.That(IsEvenCalculator.IsOddOrEven(floatValue, algorithmType, settings));
-                    Assert.That(IsEvenCalculator.IsOdd(floatValue, algorithmType, settings), Is.False);
                 });
             }
         }
@@ -143,14 +111,6 @@ namespace IsEven.Tests.Calculators
                 Assert.That(sut.IsEven(floatValue, algorithmType), Is.False);
                 Assert.That(sut.IsOddOrEven(floatValue, algorithmType));
                 Assert.That(sut.IsOdd(floatValue, algorithmType));
-
-                Assert.That(floatValue.IsEven(algorithmType, settings), Is.False);
-                Assert.That(floatValue.IsOddOrEven(algorithmType, settings));
-                Assert.That(floatValue.IsOdd(algorithmType, settings));
-
-                Assert.That(IsEvenCalculator.IsEven(floatValue, algorithmType, settings), Is.False);
-                Assert.That(IsEvenCalculator.IsOddOrEven(floatValue, algorithmType, settings));
-                Assert.That(IsEvenCalculator.IsOdd(floatValue, algorithmType, settings));
             }
         }
 
@@ -174,14 +134,6 @@ namespace IsEven.Tests.Calculators
                 Assert.That(sut.IsEven(doubleValue, algorithmType));
                 Assert.That(sut.IsOddOrEven(doubleValue, algorithmType));
                 Assert.That(sut.IsOdd(doubleValue, algorithmType), Is.False);
-
-                Assert.That(doubleValue.IsEven(algorithmType, settings));
-                Assert.That(doubleValue.IsOddOrEven(algorithmType, settings));
-                Assert.That(doubleValue.IsOdd(algorithmType, settings), Is.False);
-
-                Assert.That(IsEvenCalculator.IsEven(doubleValue, algorithmType, settings));
-                Assert.That(IsEvenCalculator.IsOddOrEven(doubleValue, algorithmType, settings));
-                Assert.That(IsEvenCalculator.IsOdd(doubleValue, algorithmType, settings), Is.False);
             }
         }
 
@@ -205,14 +157,6 @@ namespace IsEven.Tests.Calculators
                 Assert.That(sut.IsEven(doubleValue, algorithmType), Is.False);
                 Assert.That(sut.IsOddOrEven(doubleValue, algorithmType));
                 Assert.That(sut.IsOdd(doubleValue, algorithmType));
-
-                Assert.That(doubleValue.IsEven(algorithmType, settings), Is.False);
-                Assert.That(doubleValue.IsOddOrEven(algorithmType, settings));
-                Assert.That(doubleValue.IsOdd(algorithmType, settings));
-
-                Assert.That(IsEvenCalculator.IsEven(doubleValue, algorithmType, settings), Is.False);
-                Assert.That(IsEvenCalculator.IsOddOrEven(doubleValue, algorithmType, settings));
-                Assert.That(IsEvenCalculator.IsOdd(doubleValue, algorithmType, settings));
             }
         }
     }

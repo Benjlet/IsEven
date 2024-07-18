@@ -1,4 +1,4 @@
-﻿using IsEven.Implementation.Abstractions;
+﻿using IsEven.Abstractions;
 
 namespace IsEven.Tests.Models
 {

@@ -1,5 +1,5 @@
-﻿using IsEven.Base;
-using IsEven.Implementation.Abstractions;
+﻿using IsEven.Abstractions;
+using IsEven.Base;
 using IsEven.Implementation.Algorithms;
 using IsEven.Implementation.Request;
 using IsEven.Implementation.Response;

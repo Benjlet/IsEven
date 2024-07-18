@@ -1,4 +1,5 @@
-﻿using IsEven.Implementation.Abstractions;
+﻿using IsEven.Abstractions;
+using IsEven.Implementation.Abstractions;
 using IsEven.Implementation.Abstractions.Request;
 using IsEven.Implementation.Abstractions.Response;
 using IsEven.Implementation.Extensions;
