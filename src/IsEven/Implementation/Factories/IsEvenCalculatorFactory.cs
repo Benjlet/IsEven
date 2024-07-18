@@ -1,4 +1,5 @@
-﻿using IsEven.Implementation.Abstractions;
+﻿using IsEven.Abstractions;
+using IsEven.Implementation.Abstractions;
 using IsEven.Implementation.Calculators;
 
 namespace IsEven.Implementation.Factories

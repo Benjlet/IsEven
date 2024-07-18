@@ -1,4 +1,4 @@
-﻿namespace IsEven.Implementation.Abstractions
+﻿namespace IsEven.Abstractions
 {
     /// <summary>
     /// Settings for the IsEven client.

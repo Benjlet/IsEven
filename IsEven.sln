@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IsEven", "src\IsEven\IsEven.csproj", "{811D7EF7-EFC4-4868-8F06-80D54DD336B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsEven.Tests", "src\IsEven.Tests\IsEven.Tests.csproj", "{9802D370-F5BE-4480-8583-EC59F1F88009}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IsEven.Tests", "src\IsEven.Tests\IsEven.Tests.csproj", "{9802D370-F5BE-4480-8583-EC59F1F88009}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

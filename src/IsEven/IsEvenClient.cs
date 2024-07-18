@@ -20,12 +20,7 @@ namespace IsEven
         public IsEvenClient()
         {
             _service = new IsEvenService(
-                new IsEvenServiceRequestHandler(new IsEvenClientSettings()
-                {
-                    IntegersOnly = true,
-                    IsZeroEven = true,
-                    IgnoreDecimalDigits = false
-                }),
+                new IsEvenServiceRequestHandler(new IsEvenClientDefaultSettings()),
                 new IsEvenServiceResponseHandler());
         }
 
